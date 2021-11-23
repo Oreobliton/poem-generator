@@ -1,0 +1,22 @@
+START : 
+    NETTOYER LE CODE 
+    CONTINUER LA PHASE DE RECHERCHE (cf Recherches.txt)
+
+
+DATA : 
+    Récolter les données
+    Nettoyer les données
+    Former un corpus grâce aux données
+
+MODELES : 
+    Markov
+        todefine
+
+    Gpt 
+        todefine
+        
+    Rnn 
+        todefine
+        
+    Ngrammes + Qlearning 
+        todefine
