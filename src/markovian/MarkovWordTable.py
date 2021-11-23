@@ -1,9 +1,9 @@
 import json
 class MarkovTable:
     def __init__(self, filename):
-        self.datafileName = filename    #Nom de la base de données à utiliser
-        self.fileToList()               #Charges les données de la BDD correspondant à datafileName dans une liste
-        self.transitionTable = dict()   #Dico de transitions "c1c2 -> int"
+        self.datafileName = filename     #Nom de la base de données à utiliser
+        self.fileToList()       #Charges les données de la BDD correspondant à datafileName dans une liste
+        self.transitionTable = dict()    #Dico de transitions "c1c2 -> int"
 
     def fileToList(self): 
         with open(self.datafileName) as f:
@@ -22,12 +22,12 @@ class MarkovTable:
             )
         f.close
         self.dataList = data
-
     """
     Marque les mots afin de reconnaitre les débuts de phrase (Majuscule généralement)
     Et les fin de phrases(.)
     On ajoute une transition à ces caractères (^-> débuts) et (fin -> .)
     """
+
     def calculDebutEtFin(self):
         self.transitionTable["^"] = dict()
         for line in self.lines:
@@ -54,21 +54,12 @@ class MarkovTable:
             else :
                 self.transitionTable[currentWord][nextWord] += 1
     
-    def mergingWord(self, min,max,list):
-        wordComponents = list[min:max]
-        res = ""
-        for w in wordComponents:
-            res += w + " "
 
-    def generateTable(self, n=0): ###TODO cette fonction pue la merde jpeps, faut revoir tout ça et 
+    def generateTable(self):
         #init avec le debut et la fin
         self.calculDebutEtFin()
         for word in range(len(self.dataList)-1):
-            currentWord = self.mergingWord(word, word+n, self.dataList)
-            self.calculTransition(
-                currentWord,
-                self.dataList[word+n]
-                )
+            self.calculTransition(self.dataList[word], self.dataList[word +1])
 
     def prettyPrint(self):
         for k in self.transitionTable.keys() :
@@ -81,3 +72,4 @@ class MarkovTable:
         with open(filename, 'w', encoding='utf8') as f:
             f.write(json.dumps(self.transitionTable, ensure_ascii=False))
         f.close
+        

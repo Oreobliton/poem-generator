@@ -2,7 +2,7 @@ from MarkovWordTable import MarkovTable
 import random 
 from nonUninformChoice import *
 
-CORPUS_FILENAME = "Merge.txt"
+INPUT_FILENAME = "Merge.txt"
 OUTPUT_FILENAME = "sentence.txt"
 NB_SENTENCES_TO_GENERATE = 300
 STARTING_WORD = "^"
@@ -37,7 +37,7 @@ class MarkovianGenerator:
 
 
 #TODO nettoyer cette boucle elle est plutôt sale
-m = MarkovTable(CORPUS_FILENAME)
+m = MarkovTable(INPUT_FILENAME)
 m.generateTable()
 m.dumpTable()
 gen = MarkovianGenerator(m)
