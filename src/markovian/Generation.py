@@ -2,7 +2,7 @@ from MarkovWordTable import MarkovTable
 import random 
 from nonUninformChoice import *
 
-INPUT_FILENAME = "Merge.txt"
+INPUT_FILENAME = "../../data/Corpus_RAPFR.txt"
 OUTPUT_FILENAME = "sentence.txt"
 NB_SENTENCES_TO_GENERATE = 300
 STARTING_WORD = "^"
@@ -23,7 +23,7 @@ class MarkovianGenerator:
         phrase = ""
         #Remplacer le random start par un caractère de début/fin
         motCourrant = STARTING_WORD
-        for i in range(n):
+        for _i in range(n):
             phrase += motCourrant + " "
             try:
                 motCourrant = self.prochainMot(motCourrant)
@@ -35,15 +35,3 @@ class MarkovianGenerator:
                 break
         return phrase
 
-
-#TODO nettoyer cette boucle elle est plutôt sale
-m = MarkovTable(INPUT_FILENAME)
-m.generateTable()
-m.dumpTable()
-gen = MarkovianGenerator(m)
-text = ""
-for i in range(NB_SENTENCES_TO_GENERATE):
-    text += gen.generation(500) + "\n"
-f = open(OUTPUT_FILENAME,"w")
-f.write(text)
-f.close()

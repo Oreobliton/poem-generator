@@ -1,10 +1,5 @@
 import random
 
-"""
-J'ai aucune idée de comment
-mon code fonctionne wtf.
-"""
-
 def frequency_list_builder(dico: dict()) -> tuple:
     frequency_tuple_list = list()
     current_frequency = 0
@@ -14,9 +9,6 @@ def frequency_list_builder(dico: dict()) -> tuple:
     return (frequency_tuple_list, current_frequency)
 
 def pick_elem_from_frequency_list(elemNumber: int, frequencylist: list) -> list:
-    """Renvois 
-    
-    """
     if elemNumber < frequencylist[0][1]:
         return frequencylist[0][0]
     if elemNumber == frequencylist[-1][1]:
