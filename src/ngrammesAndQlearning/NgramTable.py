@@ -90,11 +90,7 @@ class NgramTable:
         self.transitionTable = table
 
 
-    def dumpTable(self, filename="dump.json"):
+    def dumpTable(self, filename="table_dump.json"):
         with open(filename, 'w', encoding='utf8') as f:
             f.write(json.dumps(self.transitionTable, ensure_ascii=False))
         f.close
-        
-n = NgramTable("/home/amarante/Bureau/Projets/fac/Tatia/projet-tatia/data/Corpus_RAPFR.txt",2)
-n.generateTable()
-n.dumpTable()
