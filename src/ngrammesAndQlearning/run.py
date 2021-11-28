@@ -1,13 +1,13 @@
 from Generation import * 
 import sys
-sys.path.insert(1, '../')
+sys.path.insert(1, '/home/amarante/Bureau/Projets/fac/Tatia/projet-tatia/src/')
 from env import *
 
-NB_SENTENCES_TO_GENERATE = 100
+NB_SENTENCES_TO_GENERATE = 200
 SENTENCE_LENGTH_LIMIT = 15
 NGRAM_SIZE = 2
 
-n = NgramTable(INPUT_FILENAME, NGRAM_SIZE)
+n = NgramTable(CORPUS_FILENAME_LOWER, NGRAM_SIZE)
 n.generateTable()
 n.dumpTable()
 gen = NgramGenerator(n)
