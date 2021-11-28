@@ -1,4 +1,5 @@
 import json
+
 class MarkovTable:
     def __init__(self, filename):
         self.datafileName = filename     #Nom de la base de données à utiliser
