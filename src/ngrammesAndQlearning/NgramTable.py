@@ -83,6 +83,12 @@ class NgramTable:
 
     def getTransitionTable(self):
         return self.transitionTable
+    
+    def importTable(self, importedTableFilename):
+        with open(importedTableFilename, "r") as read_file:
+            table = json.load(read_file)
+        self.transitionTable = table
+
 
     def dumpTable(self, filename="dump.json"):
         with open(filename, 'w', encoding='utf8') as f:
