@@ -4,8 +4,6 @@ class NgramTable:
     def __init__(self, filename, ngramSize):
         self.datafileName = filename     #Nom de la base de données à utiliser
         self.ngramSize = ngramSize
-        
-        self.fileToList()                #Charges les données de la BDD correspondant à datafileName dans une liste
         self.transitionTable = dict()    #Dico de transitions "c1c2 -> int"
 
     def fileToList(self): 
@@ -25,12 +23,12 @@ class NgramTable:
             )
         f.close
         self.dataList = data
+
     """
     Marque les mots afin de reconnaitre les débuts de phrase (Majuscule généralement)
     Et les fin de phrases(.)
     On ajoute une transition à ces caractères (^-> débuts) et (fin -> .)
     """
-
     def calculDebutEtFin(self):
         self.transitionTable["^"] = dict()
         for line in self.lines:
@@ -68,6 +66,7 @@ class NgramTable:
 
     def generateTable(self):
         #init avec le debut et la fin
+        self.fileToList()                #Charges les données de la BDD correspondant à datafileName dans une liste
         self.calculDebutEtFin()
 
         sizeOfdataList = len(self.dataList) - self.ngramSize

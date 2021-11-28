@@ -15,7 +15,6 @@ def generateTable(imported = False, importedTableFilename = ""):
 
     if imported:
         n.importTable(importedTableFilename)
-        print("using a generated table")
     else:
         n.generateTable()
         n.dumpTable()
