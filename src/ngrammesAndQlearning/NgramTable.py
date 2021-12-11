@@ -12,6 +12,7 @@ class NgramTable:
             text = f.read()
             text = text.replace("  "," ")
             self.lines = text.split("\n")
+            self.lines = list(set(self.lines))
             #enlever caractères vides
             res = []
             for l in self.lines:
@@ -61,6 +62,7 @@ class NgramTable:
             if nextWord not in self.transitionTable[currentNgram]:
                 self.transitionTable[currentNgram][nextWord] = 1
             else :
+                #print(f"{currentNgram} : {nextWord}) is {self.transitionTable[currentNgram][nextWord]}")
                 self.transitionTable[currentNgram][nextWord] += 1
     
 
