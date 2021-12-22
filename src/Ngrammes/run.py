@@ -4,7 +4,7 @@ import sys
 sys.path.insert(1, '/home/amarante/Bureau/Projets/fac/Tatia/projet-tatia/src/')
 from env import *
 
-NB_SENTENCES_TO_GENERATE = 20000
+NB_SENTENCES_TO_GENERATE = 200
 SENTENCE_LENGTH_LIMIT = 10
 NGRAM_SIZE = 2
 IMPORT_TABLE = False
@@ -17,6 +17,7 @@ def generateTable(imported = False, importedTableFilename = ""):
     else:
         n.generateTable()
         n.dumpTable()
+        print("---- New Table generated !")
 
     gen = NgramGenerator(n)
     return gen

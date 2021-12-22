@@ -34,3 +34,14 @@ Je pense qu'on va faire 3 modèles :
 ----->  On va les comparer avec le résultat de GPT2 ou 3
         On peut difficilement quantifier de manière automatique
         Donc il faudra comparer un peu à la main et tricher
+
+
+J'essaye d'implémenter un modèle de q learning, je suis toujours dans le doute quant à quel poème choisir
+et comment faire du "sur mesure" donc je me contente de mettre en place les infrastructure de code avant de
+chercher des données.
+Pour les qualifier mes résultats j'utilise ma base de donnée du rap français
+
+J'aurai aimé concevoir une forme de Qlearning qui parte à l'envers.
+On aurait pu générer les phrases les unes après les autres en partant d'un terminal.
+Ceci aurait simplifié la séléction de rhymes.
+Car cette même sélection laisse à désirer (non inclue dans l'algo mais dans un post traitement sur échantillon (j'ai peur que ça fausse l'expérience))
