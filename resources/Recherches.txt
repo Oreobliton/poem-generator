@@ -36,6 +36,7 @@ Je pense qu'on va faire 3 modèles :
         Donc il faudra comparer un peu à la main et tricher
 
 
+20/12
 J'essaye d'implémenter un modèle de q learning, je suis toujours dans le doute quant à quel poème choisir
 et comment faire du "sur mesure" donc je me contente de mettre en place les infrastructure de code avant de
 chercher des données.
@@ -45,3 +46,15 @@ J'aurai aimé concevoir une forme de Qlearning qui parte à l'envers.
 On aurait pu générer les phrases les unes après les autres en partant d'un terminal.
 Ceci aurait simplifié la séléction de rhymes.
 Car cette même sélection laisse à désirer (non inclue dans l'algo mais dans un post traitement sur échantillon (j'ai peur que ça fausse l'expérience))
+
+23/12
+Je suis en train de lire un article de meilleur qualité sur les LSTM, je m'attends à rien mais 
+je pense que je peux améliorer la qualité de ce que je produis.
+Après un problème est lié à la qualité de mon corpus (les fleurs du mal) car il reste des caractères utf-8 ou mal encodés.
+Il faut faire un peu de nettoyage.
+
+Niveau temps j'arrive à un carrefour, soit je pousse les algorithmes et les réseaux soit je pousse l'expérience.
+J'ai peur que si je bacle trop les réseaux de neurone il n'y ait que les n grames qui soit intéressant pour l'expérience.
+Ce serait dommage.
+Dans tous les cas il me faut au moins un réseau potable pour pouvoir faire des comparaisons.
+Ensuite j'essayerai GPT2
