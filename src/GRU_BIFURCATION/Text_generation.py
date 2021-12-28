@@ -4,7 +4,6 @@ from tensorflow.keras.layers.experimental import preprocessing
 import numpy as np
 import os
 import time
-from GRU_SIMPLE.Text_generation import SEQ_LENGTH
 from TextModel import *
 
 ##########CONFIGURER ICI : 
